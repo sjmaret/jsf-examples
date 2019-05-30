@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<h:head>
+	  <title>Student Ten Registration Form</title>
+	  
+	  <style>
+	  	.error {color:red}
+	  </style>
+	  
+	</h:head>
+	
+	<h:body>
+	
+		<h:form>
+			
+<!-- 			<h:messages styleClass="error"/> -->
+			
+			First Name: <h:inputText value="#{studentTen.firstName}" 
+									label="First name" />
+			
+			<br/><br/>
+			
+			Last Name: <h:inputText value="#{studentTen.lastName}"
+									label="Last name" />
+			
+			<br/><br/>
+			
+			Phone Number: <h:inputText value="#{studentTen.phoneNumber}" 
+									label="Phone Number"
+									id="phone_number" 
+									validatorMessage="Phone number must follow XXX-XXX-XXXX">
+								
+							<f:validateRegex pattern="\d{3}-\d{3}-\d{4}" />
+							
+						</h:inputText>
+									
+			<h:message for="phone_number" styleClass="error" />
+			
+			<br/><br/>
+			
+			<h:commandButton value="Submit" action="/examples/regex/student_ten_response" />
+			
+		</h:form>
+	
+	</h:body>
+
+</html>
